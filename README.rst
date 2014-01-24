@@ -25,10 +25,15 @@ Installation
 
     registry.add_to_tail(get_crazyegg_script())
 
+
+If ``add_to_tail`` or ``add_to_head`` receive a callable, it will be called with the ``request``
+keyword argument.
+
+
 - add the following in your base template to the HEAD::
 
-    {{ TEMPLATE_API_REGISTRY.render_head }}
+    {{ ALDRYN_SNAKE.render_head }}
 
 - add the following in your base template right above </BODY>::
 
-    {{ TEMPLATE_API_REGISTRY.render_tail }}
+    {{ ALDRYN_SNAKE.render_tail }}
