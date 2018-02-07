@@ -35,8 +35,10 @@ class TemplateContextProcessor(object):
         result = []
         for item in data:
             if callable(item):
-                result.append(item(request=self.request))
-            else:
+                res = item(request=self.request)
+                if res:
+                    result.append(res)
+            elif item:
                 result.append(item)
         return mark_safe('\n'.join(result))
 
